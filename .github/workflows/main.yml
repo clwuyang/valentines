@@ -33,4 +33,3 @@ jobs:
         branch: gh-pages
         folder: dist  # Make sure this matches the output directory of Vite
         token: ${{ secrets.GITHUB_TOKEN }}
-``
