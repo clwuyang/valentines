@@ -16,7 +16,7 @@ jobs:
     - name: Setup Node
       uses: actions/setup-node@v2
       with:
-        node-version: '14' # Use the Node version that matches your development environment
+        node-version: '14'  # Use the Node version that matches your development environment
 
     - name: Install Dependencies
       run: npm install
@@ -24,9 +24,13 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: List output files
+      run: ls -lR  # This will recursively list all files and directories
+
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.4
       with:
         branch: gh-pages
-        folder: dist  # This should now point to 'dist' instead of 'build'
+        folder: dist  # Make sure this matches the output directory of Vite
         token: ${{ secrets.GITHUB_TOKEN }}
+``
